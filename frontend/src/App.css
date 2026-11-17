@@ -1,0 +1,68 @@
+/* App Global Layout */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 96px; /* Prevent floating navigation pill from overlapping content */
+}
+
+/* Quick Floating View Switcher Bar for reviewer convenience */
+.quick-switcher-pill {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9000;
+  background: rgba(6, 11, 20, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--gold-border);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(212, 175, 55, 0.15);
+  border-radius: var(--radius-full);
+  padding: 6px 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  max-width: 95vw;
+  overflow-x: auto;
+}
+
+.quick-switch-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--cream-200);
+  background: transparent;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.quick-switch-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--warm-white);
+}
+
+.quick-switch-item.active {
+  background: var(--gold-gradient);
+  color: #0A1121;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);
+}
+
+@media (max-width: 600px) {
+  .quick-switch-item span.lbl {
+    display: none;
+  }
+}

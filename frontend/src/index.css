@@ -1,0 +1,283 @@
+/* Hospics Technologies - Luxury Hospitality Design System */
+:root {
+  /* Colors */
+  --navy-deep: #060B14;
+  --navy-900: #0A1221;
+  --navy-850: #0E1A2E;
+  --navy-800: #13223B;
+  --navy-700: #1B2D4F;
+  --navy-600: #263D68;
+  --navy-500: #38558A;
+  
+  --gold-50: #FBF8F0;
+  --gold-100: #F5ECCE;
+  --gold-200: #EBD9A0;
+  --gold-300: #DFBE5E;
+  --gold-400: #D4AF37;
+  --gold-500: #C59B27;
+  --gold-600: #9E7A18;
+  --gold-700: #74580E;
+  --gold-gradient: linear-gradient(135deg, #FFF0D0 0%, #D4AF37 50%, #9C7818 100%);
+  --gold-subtle-glow: 0 0 24px rgba(212, 175, 55, 0.22);
+  --gold-border: rgba(212, 175, 55, 0.28);
+  --gold-border-strong: rgba(212, 175, 55, 0.55);
+
+  --warm-white: #FAF8F5;
+  --cream-100: #F4EFE6;
+  --cream-200: #E8E1D3;
+  --cream-300: #D9D0C1;
+  
+  --surface-card: rgba(14, 26, 46, 0.75);
+  --surface-card-hover: rgba(19, 34, 59, 0.9);
+  --surface-glass: rgba(10, 18, 33, 0.85);
+  --surface-border: rgba(255, 255, 255, 0.08);
+
+  --text-main: #FFFFFF;
+  --text-primary: #F4EFE6;
+  --text-secondary: #B4B9C8;
+  --text-muted: #7E879B;
+  --text-gold: #DFBE5E;
+
+  --status-emerald: #10B981;
+  --status-emerald-bg: rgba(16, 185, 129, 0.12);
+  --status-amber: #F59E0B;
+  --status-amber-bg: rgba(245, 158, 11, 0.12);
+  --status-rose: #F43F5E;
+  --status-rose-bg: rgba(244, 63, 94, 0.12);
+  --status-blue: #38BDF8;
+  --status-blue-bg: rgba(56, 189, 248, 0.12);
+
+  /* Fonts */
+  --font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  /* Shadows & Radii */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.55);
+  --shadow-gold: 0 8px 30px rgba(212, 175, 55, 0.18);
+
+  /* Layout */
+  --container-max: 1280px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  background-color: var(--navy-deep);
+  color: var(--text-primary);
+  font-size: 16px;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% 0%, #11203B 0%, #060B14 70%);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Typography Presets */
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-serif);
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+
+.text-gold-gradient {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+input, textarea, select {
+  font-family: inherit;
+  outline: none;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--navy-900);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--navy-700);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-500);
+}
+
+/* Common Components & Luxury Badges */
+.badge-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid var(--gold-border);
+  color: var(--gold-300);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.08);
+}
+
+.badge-navy {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--surface-border);
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+/* Button Presets */
+.btn-gold-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--gold-gradient);
+  color: #0A1121;
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  padding: 13px 26px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-gold);
+  border: 1px solid rgba(255, 240, 208, 0.5);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.btn-gold-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(212, 175, 55, 0.35);
+  filter: brightness(1.05);
+}
+.btn-gold-primary:active {
+  transform: translateY(0);
+}
+
+.btn-luxury-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(14, 26, 46, 0.6);
+  color: var(--warm-white);
+  border: 1px solid var(--gold-border);
+  padding: 13px 24px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.92rem;
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+}
+.btn-luxury-outline:hover {
+  background: rgba(212, 175, 55, 0.12);
+  border-color: var(--gold-400);
+  color: var(--gold-200);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-primary);
+  border: 1px solid var(--surface-border);
+  padding: 10px 18px;
+  border-radius: var(--radius-md);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Glass Card */
+.glass-card {
+  background: var(--surface-card);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-card:hover {
+  border-color: var(--gold-border);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* Utility Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.03); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
